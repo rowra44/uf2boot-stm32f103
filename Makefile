@@ -19,7 +19,7 @@ build:
 
 copy:
 	@echo "Copying results to $(BUILD_DIR)..."
-	# Copy each result from src to build dir
+	mkdir $(BUILD_DIR)
 	@for file in $(SUB_RESULTS); do \
 		cp $(SRC_DIR)/$$file $(BUILD_DIR)/; \
 	done

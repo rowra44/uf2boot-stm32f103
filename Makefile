@@ -3,20 +3,15 @@ SRC_DIR := src
 BUILD_DIR := build
 SUB_RESULTS := build/BLUEPILL/uf2boot.bin
 
-.PHONY: all clean requirements build copy message
+.PHONY: all clean build copy message
 
-all: requirements build copy message
+all: build copy message
 
 clean:
 	@echo "Cleaning everything"
 	rm -rf build/*
 	make -C src clean
 	make -C libopencm3 clean
-
-requirements:
-	@echo "Installing requirements"
-	apt update
-	apt install -y gcc-arm-none-eabi 
 
 build:
 	@echo "Building project inside $(SRC_DIR)..."
